@@ -8,7 +8,7 @@ static const unsigned int gappx     = 8;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "FiraCode-Regular:size=16" };
+static const char *fonts[]          = { "FiraCode-Regular:size=16", "fontawesome-regular:size=16" };
 static const char dmenufont[]       = "FiraCode-Regular:size=16";
 static const char col_gray1[]       = "#2d2d2d";
 static const char col_gray2[]       = "#515151";
@@ -105,16 +105,13 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-        /*{ 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("pactl set-sink-volume 0 -5% && pkill -RTMIN+11 dwmblocks") },
-        { 0,              XF86XK_AudioMute,        spawn,          SHCMD("pactl set-sink-mute 0 toggle &&  pkill -RTMIN+11 dwmblocks") },
-        { 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("pactl set-sink-volume 0 +5% && pkill -RTMIN+11 dwmblocks") },
-        */
         { 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("volume.sh down") },
         { 0,              XF86XK_AudioMute,        spawn,          SHCMD("volume.sh mute") },
         { 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("volume.sh up") },
         { 0,              XF86XK_AudioMicMute,     spawn,          SHCMD("pactl set-source-mute 0 toggle") },
         { 0,              XF86XK_MonBrightnessUp,  spawn,          SHCMD("brightness.sh up") },
         { 0,              XF86XK_MonBrightnessDown, spawn,         SHCMD("brightness.sh down") },
+        { MODKEY|ShiftMask,           XK_l,                    spawn,         SHCMD("slock") },
 };
 
 /* button definitions */
