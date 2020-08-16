@@ -4,7 +4,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 8;        /* gaps between windows */
+static const unsigned int gappx     = 12;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -31,7 +31,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+//	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -104,14 +104,15 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,                       XK_w,      quit,           {0} },
         { 0,              XF86XK_AudioLowerVolume, spawn,          SHCMD("volume.sh down") },
         { 0,              XF86XK_AudioMute,        spawn,          SHCMD("volume.sh mute") },
         { 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("volume.sh up") },
         { 0,              XF86XK_AudioMicMute,     spawn,          SHCMD("pactl set-source-mute 0 toggle") },
         { 0,              XF86XK_MonBrightnessUp,  spawn,          SHCMD("brightness.sh up") },
         { 0,              XF86XK_MonBrightnessDown, spawn,         SHCMD("brightness.sh down") },
-        { MODKEY|ShiftMask,           XK_l,                    spawn,         SHCMD("slock") },
+        { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("slock") },
+        { MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("systemctl suspend") },
 };
 
 /* button definitions */
